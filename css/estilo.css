@@ -1,0 +1,117 @@
+body {
+    background: rgb(107,0,147);
+    background: linear-gradient(180deg, rgba(107,0,147,1) 0%, rgba(63,19,80,1) 100%) no-repeat fixed;
+    color: #fff;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+.sombra-borda{
+    -webkit-box-shadow: 0px 0px 43px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 43px 8px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 43px 8px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 320px){
+    .mr-3{
+        margin-right: 0px!important; 
+    }
+    .col-3{
+        padding-right: 0px;
+        padding-left: 0px;
+        flex: none;
+        max-width: none;
+        display: inline-grid;
+    }
+    .card{
+        display: inline-grid;
+    }
+    .row{
+        display: inline-grid;
+    }
+}
+
+@media (max-width: 375px){
+    .mr-3{
+        margin-right: 0px!important; 
+    }
+    .col-3{
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0px;
+        padding-left: 0px;
+        flex: none;
+        max-width: none;
+        display: inline-grid;
+    }
+    .card{
+        display: inline-grid;
+    }
+    .row{
+        display: inline-grid;
+    }
+}
+
+@media (max-width: 425px){
+    .mr-3{
+        margin-right: 0px!important; 
+    }
+    .col-3{
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0px;
+        padding-left: 0px;
+        flex: none;
+        max-width: none;
+        display: inline-grid;
+    }
+    .card{
+        display: inline-grid;
+    }
+    .row{
+        display: block;
+    }
+}
+
+@media (max-width: 768px){
+    .mr-3{
+        margin-right: 0px!important; 
+    }
+    .col-3{
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 10%;
+        padding-left: 10%;
+        flex: none;
+        max-width: none;
+        display: inline-grid;
+    }
+    .card{
+        display: inline-grid;
+    }
+    .row{
+        display: block;
+    }
+}
+
+@media (max-width: 1024px){
+    .mr-3{
+        margin-right: 0px!important; 
+    }
+    .col-3{
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 5%;
+        padding-left: 5%;
+        flex: none;
+        max-width: none;
+        display: inline-grid;
+    }
+}

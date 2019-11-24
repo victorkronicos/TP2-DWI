@@ -1,0 +1,157 @@
+<!-- TRABALHO PRÁTICO DE DESENVOLVIMENTO WEB I  -->
+<!-- PROFESSOR: ALEXANDRE SOBRINO               -->
+<!-- SISTEMAS DE INFORMAÇÃO - UNISANTA          -->
+<!-- NOME: VICTOR HENRIQUE            RA 166024 -->
+<!-- NOME: PEDRO DONATO               RA 175627 -->
+<!-- NOME: ANDRÉ KLIVER               RA 174769 -->
+<!-- NOME: NATÁLIA DO AMARAL          RA 166587 -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cálculo de Rendimento | TP DW I</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div class="container-fluid text-center">
+<!-- HEADER -->
+    <header>
+        <h1 class="display-4">Calculadora de Rendimento</h1>
+        <h2 class="display-5">Trabalho Prático de Desenvolvimento Web I</h2>
+        <p class="font-weight-bold text-center">Esse site foi desenvolvido para calcular o rendimento de uma aplicação na Caderneta de Poupança e no Tesouro Selic e compararando os dois rendimentos com a Inflação (IPCA).</p>
+    </header>
+<!-- HEADER -->
+
+<!-- INPUT VALOR E TEMPO -->
+  <div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-3">
+      <label for="valor">
+        <span class="btn btn-lg btn-light rounded-pill">Insira o valor inicial:</span>
+      </label>
+    </div>
+    <div class="col-3"> 
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg">R$</span>
+        </div>
+        <input type="number" class="form-control" name="valor" id="valor" aria-label="Large" required>
+      </div>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-3">
+      <label for="tempo">
+          <span class="btn btn-lg btn-light rounded-pill">Insira o tempo:</span>
+      </label>
+    </div>
+      <div class="col-3">
+          <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Em meses*</span>
+              </div>
+              <input id="tempo" type="number" class="form-control" name="tempo" aria-label="Large">
+          </div>
+      </div>
+      <div class="col">
+      
+      </div>
+  </div>
+<!-- INPUT VALOR E TEMPO -->
+
+<!-- BOTÃO CALCULAR -->
+<div class="row justify-content-center mt-5 mb-3">
+  <button type="button" class="btn btn-light btn-lg" onclick="CalcularRendimento()">Calcular</button>
+</div>
+<!-- BOTÃO CALCULAR -->
+
+
+<!-- BLOCO RENTABILIDADE POUPANÇA X TESOURO SELIC X IPCA -->
+<div class="row justify-content-center">
+      <div class="col-3 card bg-white rounded pt-1 mr-3 pb-5 border border-dark sombra-borda">
+            <label class="h6"><span class="text-center text-box text-dark">Rendimento na <a href="#" data-toggle="tooltip" data-placement="right" title="Com a taxa Selic em 5,0% ao ano (dado de outubro de 2019) e a TR próximo do 0%, o rendimento da poupança hoje é de 70% da Selic + TR. Portanto, ela rende em torno de 3,50% ao ano.">Poupança</a></span></label>
+            <output class="d-block display-4 text-center text-success" id="rendimento-poupanca"></output>
+            <output class="d-block text-center text-success" id="compara-poupanca-selic"></output>
+            <output class="d-block text-center text-danger" id="compara-poupanca-ipca"></output>
+      </div>
+
+      <div class="col-3 card bg-white rounded pt-1 mr-3 pb-5 pb-5 border border-dark sombra-borda">
+          <label class="h6">
+            <span class="text-center text-box text-dark">Rendimento no <a href="#" data-toggle="tooltip" data-placement="right" title="O Tesouro Selic é um título emitido pelo Tesouro Nacional atrelado à Taxa Selic, a taxa básica de juros, que atualmente vale 5,0% ao ano (novembro de 2019).">Tesouro SELIC</a>
+            </span>
+          </label>
+          <output class="d-block display-4 text-center text-success" id="rendimento-selic"></output>
+          <output class="d-block text-center text-success" id="compara-selic-poupanca"></output>
+          <output class="d-block text-center text-danger" id="compara-selic-ipca"></output>
+      </div>
+
+    <div class="col-3 card bg-white rounded pt-1 mr-3 pb-5 pb-5 border border-dark sombra-borda">
+        <label class="h6"><span class="text-center text-box text-dark"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Este importante índice é medido mensalmente pelo IBGE para identificar a variação dos preços no comércio. Considerado pelo Banco Central, o índice brasileiro oficial da inflação ou deflação.">IPCA</a></span><span class="d-block text-danger display-4">Atual
+            2,54%</span><small class="text-danger">Acumulado no ano de 2019</small><span class="d-block text-dark">Fonte: <a href="https://br.investing.com/economic-calendar/brazilian-cpi-410" target="_blank">Investing.com</a></span></label>
+  </div>
+</div>
+<!-- BLOCO RENTABILIDADE POUPANÇA X TESOURO SELIC X IPCA -->
+
+<div class="container-fluid border-top mt-5">
+
+</div>
+
+<!-- PARTICIPANTES DO GRUPO -->
+<div class="row mt-3 mb-3 justify-content-center">
+  <div class="col-2">
+
+  </div>
+  <div class="col-3">
+    <a href="https://validator.w3.org/" target="_blank"><img src="images/i_love_validator.png" alt="I LOVE VALIDATOR"></a>
+  </div>
+  <div class="col">
+  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#exampleModal">
+    Ver participantes
+  </button>
+</div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="text-dark font-weight-bold modal-title" id="exampleModalLabel">Alunos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body text-dark">
+      <div class="row ml-3">Victor Henrique - RA 166024</div>
+      <div class="row ml-3">Pedro Donato - RA 175627</div>
+      <div class="row ml-3">André Luiz Kliver - RA 174769</div>
+      <div class="row ml-3">Natália do Amaral - RA 166587</div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- PARTICIPANTES DO GRUPO -->
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/jquery.mask.js" type="text/javascript"></script>
+<script src="js/script.js" async></script>
+</body>
+</html>
